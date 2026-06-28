@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conveyor Counter</title>
+
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+padding-top: 40px;
+}
+
+h1 {
+font-size: 40px;
+}
+
+#count {
+font-size: 100px;
+margin: 40px;
+}
+
+button {
+font-size: 50px;
+padding: 20px 50px;
+margin: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Conveyor Counter</h1>
+
+<div id="count">0</div>
+
+<button onclick="changeCount(1)">+</button>
+
+<br>
+
+<button onclick="changeCount(-1)">-</button>
+
+<script>
+
+let count = 0;
+
+function changeCount(amount) {
+count = count + amount;
+document.getElementById("count").innerHTML = count;
+}
+
+</script>
+
+</body>
+</html>
 
