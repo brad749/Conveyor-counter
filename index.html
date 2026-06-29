@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <title>Conveyor Counter</title>
@@ -48,6 +48,20 @@ function changeCount(amount) {
 count = count + amount;
 document.getElementById("count").innerHTML = count;
 }
+// Firebase connection
+const firebaseConfig = {
+databaseURL: "https://conveyorcounter-193fb-default-rtdb.asia-southeast1.firebasedatabase.app"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.database();
+const counterRef = db.ref("count");
+
+counterRef.on("value", (snapshot) => {
+count = snapshot.val() || 0;
+document.getElementById("count").innerHTML = count;
+});
 
 </script>
 
